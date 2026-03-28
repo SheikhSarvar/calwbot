@@ -2,6 +2,7 @@
 data_loader.py – Loads and caches product, order, and policy data from disk.
 """
 import csv
+import datetime
 import os
 from typing import Any
 
@@ -33,6 +34,7 @@ def _to_bool(value: str) -> bool:
 _products_cache: dict[str, dict] | None = None
 _orders_cache: dict[str, dict] | None = None
 _policy_cache: str | None = None
+_reference_today_cache: datetime.date | None = None
 
 
 def load_products() -> dict[str, dict]:
@@ -96,3 +98,34 @@ def load_policy() -> str:
     with open(path, encoding="utf-8") as fh:
         _policy_cache = fh.read()
     return _policy_cache
+
+
+def get_reference_today() -> datetime.date:
+    """
+    Return the reference "today" used for deterministic simulations.
+
+    Priority:
+      1) Environment variable REFERENCE_DATE (ISO, e.g. 2026-03-03)
+      2) Latest order_date in orders.csv + 7 days (gives a mix of eligible/expired)
+      3) System date (fallback)
+    """
+    global _reference_today_cache
+    if _reference_today_cache is not None:
+        return _reference_today_cache
+
+    env = os.environ.get("REFERENCE_DATE", "").strip()
+    if env:
+        _reference_today_cache = datetime.date.fromisoformat(env)
+        return _reference_today_cache
+
+    try:
+        orders = load_orders()
+        if orders:
+            max_date = max(datetime.date.fromisoformat(o["order_date"]) for o in orders.values())
+            _reference_today_cache = max_date + datetime.timedelta(days=7)
+            return _reference_today_cache
+    except Exception:
+        pass
+
+    _reference_today_cache = datetime.date.today()
+    return _reference_today_cache

@@ -3,7 +3,7 @@ main.py – CLI entry point for the Retail AI Assistant.
 
 Usage:
     python main.py              → Interactive chat
-    python main.py --demo       → Run all 5 demo scenarios
+    python main.py --demo       → Run all built-in demo scenarios
     python main.py --channel whatsapp  → Simulate WhatsApp channel
 """
 from __future__ import annotations
@@ -34,13 +34,22 @@ DEMO_SCENARIOS = [
             "Hi! Looking for a long-sleeve formal gown for a wedding. Budget around $400. Size 10.",
         ],
     },
+    # ── Sizing Scenario ───────────────────────────────────────────────────────
+    {
+        "id":      "SIZE-1",
+        "title":   "Product Sizing Availability Check",
+        "channel": "chat",
+        "turns": [
+            "Is P0016 available in size 8?",
+        ],
+    },
     # ── Support Scenario 1 ────────────────────────────────────────────────────
     {
         "id":      "SUPP-1",
-        "title":   "Return Request – Recent Order (Normal Item)",
+        "title":   "Return Request – Recent Order (Eligible)",
         "channel": "chat",
         "turns": [
-            "Order O0015 — I bought a dress last week. It doesn't fit. Can I return it?",
+            "Order O0018 — I bought this dress last week. It doesn't fit. Can I return it?",
         ],
     },
     # ── Support Scenario 2 ────────────────────────────────────────────────────
@@ -50,6 +59,15 @@ DEMO_SCENARIOS = [
         "channel": "chat",
         "turns": [
             "I want to return order O0023. I bought this dress recently but it's not what I expected.",
+        ],
+    },
+    # ── Support Scenario 3 ────────────────────────────────────────────────────
+    {
+        "id":      "SUPP-STATUS",
+        "title":   "Order Status / Tracking Update",
+        "channel": "whatsapp",
+        "turns": [
+            "Can you check the status of order O0047? Has it shipped yet?",
         ],
     },
     # ── Edge Case ─────────────────────────────────────────────────────────────

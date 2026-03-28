@@ -53,7 +53,8 @@ _SHOPPING_PATTERNS = re.compile(
 )
 _ESCALATION_PATTERNS = re.compile(
     r"\b(human|agent|person|representative|speak to|talk to|manager|help me|"
-    r"frustrated|angry|urgent|lawsuit|complaint)\b",
+    r"frustrated|angry|urgent|lawsuit|complaint|chargeback|dispute|fraud|"
+    r"payment|charged|billing|address change|change address|stolen)\b",
     re.IGNORECASE,
 )
 _GREETING_PATTERNS = re.compile(
