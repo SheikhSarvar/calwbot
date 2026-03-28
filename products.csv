@@ -1,0 +1,101 @@
+product_id,title,vendor,price,compare_at_price,tags,sizes_available,stock_per_size,is_sale,is_clearance,bestseller_score
+P0001,Midnight Lace Gown,Nocturne,137,220,"evening,modest,lace,long-sleeve,fitted","2,4,6,8,10,12","5,8,12,10,7,4",false,false,82
+P0002,Garden Party Midi,Belle & Rose,189,189,"daytime,modest,midi,flutter-sleeve,flowy","4,6,8,10,12","3,6,9,8,5",false,false,67
+P0003,Velvet Empire Dress,Aurelia Couture,258,380,"evening,modest,long-sleeve,velvet,fitted","2,4,6,8,10","2,4,6,5,3",false,false,74
+P0004,Sunrise Wrap Dress,Zephyr,95,150,"casual,wrap,3/4-sleeve,flowy","4,6,8,10,12,14","0,4,8,10,7,3",true,false,55
+P0005,Coastal Linen Shift,Zephyr,72,120,"casual,modest,sleeveless,linen","6,8,10,12","6,9,11,8",true,false,48
+P0006,Pearl Embroidered Gown,Aurelia Couture,420,580,"evening,modest,long-sleeve,embroidered,fitted","2,4,6,8,10,12","1,2,3,2,1,1",false,false,91
+P0007,Blush Satin Ballgown,Luxe Bridal,380,540,"formal,modest,sleeveless,satin,fitted","4,6,8,10,12","2,3,5,4,2",false,false,88
+P0008,Classic Crepe Sheath,Classique,309,309,"office,modest,3/4-sleeve,crepe,fitted","2,4,6,8,10,12,14,16","4,5,7,9,8,6,4,3",false,false,63
+P0009,Meadow Floral Dress,Belle & Rose,145,220,"daytime,modest,modest,long-sleeve,flowy,floral","4,6,8,10,12","5,8,10,7,4",true,false,71
+P0010,Ebony Sequin Gown,Nocturne,295,295,"evening,sleeveless,sequin,fitted","2,4,6,8","1,2,3,2",false,false,79
+P0011,Sage Chiffon Maxi,Zephyr,168,168,"evening,modest,long-sleeve,chiffon,flowy","4,6,8,10,12,14","3,5,8,7,5,3",false,false,66
+P0012,Rose Brocade Cocktail,Aurelia Couture,76,160,"cocktail,modest,3/4-sleeve,brocade,fitted","2,4,6,8,10,12,14","0,4,7,9,8,5,3",true,true,42
+P0013,Teal Drape Gown,Nocturne,284,390,"evening,modest,one-shoulder,drape,flowy","4,6,8,10,12,16","4,6,8,7,5,3",false,false,77
+P0014,Gold Foil Maxi,Luxe Bridal,414,560,"formal,modest,long-sleeve,foil,fitted","4,6,8,10,12","2,3,5,4,2",false,false,85
+P0015,Navy Wrap Midi,Belle & Rose,298,420,"daytime,modest,3/4-sleeve,wrap,midi","2,4,6,8,10,12,14","3,5,7,10,8,6,4",false,false,72
+P0016,Burgundy Lace Overlay,Classique,199,350,"evening,modest,long-sleeve,lace,fitted","4,6,8,10,12","2,4,6,5,3",true,false,69
+P0017,Desert Sand Kaftan,Zephyr,109,109,"casual,modest,long-sleeve,kaftan,flowy","6,8,10,12,16","0,6,10,8,4",false,false,51
+P0018,Emerald Silk Gown,Aurelia Couture,376,520,"evening,modest,sleeveless,silk,fitted","2,4,6,8,10,12,14,16","1,2,4,6,5,4,2,1",false,false,93
+P0019,Ivory Broderie Dress,Belle & Rose,131,200,"daytime,modest,short-sleeve,broderie,flowy","4,6,8,10,12,14,16","0,3,6,9,7,5,3",true,false,58
+P0020,Onyx Beaded Gown,Luxe Bridal,419,570,"formal,sleeveless,beaded,fitted","2,4,6,8,10","1,2,4,3,2",false,false,87
+P0021,Lavender Pleated Midi,Classique,277,277,"office,modest,sleeveless,pleated,midi","4,6,8,10,12,14","4,6,8,7,5,3",false,false,65
+P0022,Crimson Velvet Gown,Nocturne,437,580,"evening,modest,long-sleeve,velvet,fitted","2,4,6,8,10,12,14,16","2,3,5,7,6,4,3,2",false,false,89
+P0023,Dusty Rose Chiffon,Belle & Rose,259,370,"evening,modest,flutter-sleeve,chiffon,flowy","2,4,6,8,10,12","2,4,6,8,7,5",false,false,76
+P0024,Cobalt Bodycon Dress,Zephyr,275,275,"cocktail,fitted,sleeveless","2,4,6,8,10,12,14,16","3,5,7,9,8,6,4,2",false,false,61
+P0025,Forest Green Maxi,Classique,266,380,"evening,modest,long-sleeve,maxi,flowy","4,6,8,10,12","3,5,7,6,4",false,false,70
+P0026,Champagne Sequin Gown,Luxe Bridal,390,530,"formal,sleeveless,sequin,fitted","4,6,8,10,12,14","1,2,4,5,3,2",false,false,91
+P0027,Plum Satin Slip,Nocturne,185,260,"evening,sleeveless,satin,fitted","2,4,6,8","2,4,5,3",false,false,62
+P0028,White Eyelet Dress,Belle & Rose,153,230,"daytime,modest,short-sleeve,eyelet,flowy","4,6,8,10,12","4,6,8,7,5",false,false,54
+P0029,Sapphire Embellished,Aurelia Couture,305,440,"evening,modest,long-sleeve,embellished,fitted","2,4,6,8,10","1,2,4,3,2",false,false,83
+P0030,Copper Metallic Sheath,Classique,232,340,"cocktail,3/4-sleeve,metallic,fitted","2,4,6,8,10,12","2,4,6,5,3,2",false,false,68
+P0031,Jasmine Floral Maxi,Belle & Rose,311,430,"daytime,modest,long-sleeve,floral,maxi,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,75
+P0032,Midnight Blue Crepe,Classique,305,305,"office,modest,3/4-sleeve,crepe,fitted","2,4,6,8,10,12,14","4,6,8,7,5,4,2",false,false,64
+P0033,Terracotta Boho Dress,Zephyr,266,380,"casual,modest,long-sleeve,boho,flowy","4,6,8,10,12,14,16","3,5,7,9,8,6,4",false,false,57
+P0034,Lilac Organza Gown,Aurelia Couture,239,360,"evening,modest,sleeveless,organza,fitted","2,4,6,8,10,12","1,2,4,5,4,2",false,false,80
+P0035,Mocha Linen Shift,Zephyr,78,140,"casual,modest,sleeveless,linen","4,6,8,10,12,16","0,4,8,9,7,3",true,true,38
+P0036,Fuchsia Ruffle Gown,Nocturne,349,480,"evening,ruffle,sleeveless,fitted","2,4,6,8,10","1,3,5,4,2",false,false,84
+P0037,Peach Lace Midi,Belle & Rose,178,260,"daytime,modest,long-sleeve,lace,midi","4,6,8,10,12,14","3,5,7,6,4,3",false,false,61
+P0038,Silver Sequin Mini,Luxe Bridal,144,250,"cocktail,sleeveless,sequin,fitted","2,4,6,8","0,4,7,5",true,false,48
+P0039,Ruby Off-Shoulder,Nocturne,430,580,"evening,off-shoulder,satin,fitted","2,4,6,8,10,12","1,2,4,5,4,2",false,false,90
+P0040,Mint Floral Wrap,Zephyr,204,290,"daytime,modest,wrap,3/4-sleeve,flowy,floral","4,6,8,10,12,16","3,5,7,8,6,4",false,false,59
+P0041,Slate Crepe Shift,Classique,122,200,"office,modest,sleeveless,crepe,fitted","2,4,6,8,10,12","4,6,8,9,7,5",false,false,56
+P0042,Ivory Lace Ballgown,Luxe Bridal,485,640,"formal,modest,long-sleeve,lace,fitted","2,4,6,8,10,12","1,2,3,4,3,2",false,false,92
+P0043,Tangerine Sundress,Belle & Rose,219,310,"daytime,sleeveless,casual,flowy","4,6,8,10,12,14","4,6,9,8,6,3",false,false,60
+P0044,Smoke Velvet Midi,Nocturne,346,480,"evening,modest,long-sleeve,velvet,midi,fitted","2,4,6,8,10","2,3,5,4,3",false,false,81
+P0045,Olive Linen Shift,Zephyr,183,260,"casual,modest,sleeveless,linen","4,6,8,10,12,14","3,5,7,6,4,2",false,false,50
+P0046,Blush Tulle Gown,Luxe Bridal,399,540,"formal,modest,sleeveless,tulle,fitted","4,6,8,10,12","1,2,4,3,2",false,false,86
+P0047,Walnut Knit Dress,Classique,165,240,"casual,modest,long-sleeve,knit,fitted","4,6,8,10,12,14","4,6,7,8,6,4",false,false,62
+P0048,Steel Blue Shirtdress,Belle & Rose,82,150,"daytime,modest,long-sleeve,shirtdress","4,6,8,10,12,14","0,3,6,9,8,5",true,true,35
+P0049,Marigold Chiffon,Zephyr,71,130,"casual,modest,flutter-sleeve,chiffon,flowy","4,6,8,10,12","4,6,8,7,5",true,true,31
+P0050,Indigo Satin Gown,Nocturne,274,390,"evening,modest,sleeveless,satin,fitted","2,4,6,8,10,12","2,4,6,5,3,2",false,false,73
+P0051,Coral Empire Maxi,Belle & Rose,210,300,"daytime,modest,empire,long-sleeve,maxi,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,66
+P0052,Onyx Ponte Sheath,Classique,189,270,"office,modest,3/4-sleeve,ponte,fitted","2,4,6,8,10,12","4,6,8,7,5,3",false,false,70
+P0053,Wine Halter Gown,Nocturne,343,476,"evening,halter,satin,fitted","2,4,6,8,10,12,14","2,3,5,6,5,3,2",false,false,88
+P0054,Seafoam A-Line,Belle & Rose,178,250,"daytime,modest,sleeveless,a-line,flowy","4,6,8,10,12,14","3,5,7,8,6,4",false,false,64
+P0055,Caramel Wrap Dress,Zephyr,255,360,"casual,wrap,3/4-sleeve,flowy","4,6,8,10,12","4,6,8,7,5",false,false,58
+P0056,Dusty Mauve Kaftan,Zephyr,88,160,"casual,modest,long-sleeve,kaftan,flowy","6,8,10,12,14","0,6,9,7,4",true,false,44
+P0057,Citrine Ruched Dress,Luxe Bridal,155,240,"cocktail,sleeveless,ruched,fitted","2,4,6,8,10","2,4,6,5,3",true,false,52
+P0058,Cobalt Maxi Dress,Nocturne,326,450,"evening,modest,sleeveless,maxi,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,78
+P0059,Beige Linen Blend,Zephyr,191,280,"casual,modest,sleeveless,linen","6,8,10,12,14","5,8,10,8,5",false,false,53
+P0060,Jade Wrap Maxi,Belle & Rose,279,390,"daytime,modest,wrap,long-sleeve,maxi,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,69
+P0061,Slate Knit Turtleneck,Classique,151,220,"casual,modest,long-sleeve,knit,turtleneck,fitted","2,4,6,8,10,12,14","4,6,8,7,5,4,2",false,false,60
+P0062,Champagne Tulle Skirt,Luxe Bridal,172,250,"formal,modest,sleeveless,tulle","4,6,8,10,12","2,3,5,4,3",false,false,67
+P0063,Rust Boho Dress,Zephyr,173,250,"casual,modest,long-sleeve,boho,flowy","4,6,8,10,12,14","3,5,6,7,5,3",false,false,55
+P0064,Mauve A-Line Midi,Belle & Rose,205,300,"daytime,modest,3/4-sleeve,a-line,midi","4,6,8,10,12","4,6,8,9,7",false,false,71
+P0065,Black Sequin Gown,Nocturne,319,440,"evening,sleeveless,sequin,fitted","2,4,6,8,10,12","2,3,5,4,3,2",false,false,86
+P0066,Camel Shirt Dress,Belle & Rose,277,390,"daytime,modest,long-sleeve,shirtdress","4,6,8,10,12,14","4,6,7,8,6,4",false,false,63
+P0067,Sage Ruffle Dress,Zephyr,289,400,"daytime,modest,ruffle,3/4-sleeve,flowy","4,6,8,10,12","3,5,7,6,4",false,false,61
+P0068,Graphite Ponte Sheath,Classique,253,360,"office,modest,sleeveless,ponte,fitted","2,4,6,8,10,12,14","3,5,7,6,4,3,2",false,false,74
+P0069,Cream Lace Sheath,Classique,75,150,"office,modest,3/4-sleeve,lace,fitted","2,4,6,8,10,12,16","0,3,6,8,7,5,2",true,true,40
+P0070,Sapphire Pleated Gown,Aurelia Couture,330,470,"evening,modest,long-sleeve,pleated,fitted","2,4,6,8,10","1,2,3,2,1",false,false,85
+P0071,White Broderie Dress,Belle & Rose,199,290,"daytime,modest,short-sleeve,broderie,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,59
+P0072,Blush Crepe Sheath,Classique,193,275,"office,modest,3/4-sleeve,crepe,fitted","2,4,6,8,10,12,14,16","4,6,8,7,5,4,2,1",false,false,72
+P0073,Cherry Midi Dress,Nocturne,300,420,"evening,modest,long-sleeve,midi,fitted","2,4,6,8,10,12,14","2,3,5,7,6,4,2",false,false,79
+P0074,Stone Chiffon Gown,Aurelia Couture,360,510,"evening,modest,sleeveless,chiffon,flowy","2,4,6,8,10,12","1,2,4,5,3,2",false,false,77
+P0075,Bronze Satin Gown,Luxe Bridal,364,500,"formal,modest,sleeveless,satin,fitted","4,6,8,10,12,14,16","1,2,4,5,4,3,2",false,false,88
+P0076,Olive Wrap Dress,Zephyr,121,200,"casual,wrap,3/4-sleeve,flowy","4,6,8,10,12","4,6,8,7,5",true,false,47
+P0077,Dusty Blue Lace,Belle & Rose,235,340,"daytime,modest,long-sleeve,lace,midi","4,6,8,10,12,14","3,5,7,6,4,3",false,false,68
+P0078,Black Bodycon Midi,Classique,95,175,"cocktail,sleeveless,fitted,midi","2,4,6,8,10,12,14","0,2,5,8,7,5,2",true,true,45
+P0079,Lavender Satin Gown,Nocturne,336,470,"evening,modest,sleeveless,satin,fitted","2,4,6,8,10,12","2,3,5,4,3,2",false,false,82
+P0080,Coral Sundress,Zephyr,53,110,"casual,sleeveless,casual,flowy","4,6,8,10,12","2,4,6,5,3",true,true,33
+P0081,Powder Blue Ball Gown,Luxe Bridal,291,420,"formal,modest,long-sleeve,ballgown,fitted","4,6,8,10,12,14","2,3,5,4,3,2",false,false,84
+P0082,Burnt Orange Wrap,Belle & Rose,232,330,"daytime,modest,wrap,3/4-sleeve,flowy","4,6,8,10,12","3,5,7,6,4",false,false,63
+P0083,Peacock Maxi Dress,Nocturne,205,300,"evening,modest,long-sleeve,maxi,flowy","4,6,8,10,12,14","3,5,6,7,5,3",false,false,76
+P0084,Dusty Lilac Kaftan,Zephyr,98,180,"casual,modest,long-sleeve,kaftan,flowy","6,8,10,12","0,5,8,6",true,false,43
+P0085,Silver Foil Maxi,Luxe Bridal,273,400,"formal,modest,long-sleeve,foil,fitted","4,6,8,10,12","2,3,5,4,3",false,false,80
+P0086,Midnight Emerald Gown,Aurelia Couture,316,460,"evening,modest,long-sleeve,velvet,fitted","2,4,6,8,10,12,14,16","2,3,5,7,6,4,3,2",false,false,94
+P0087,Dusty Pink A-Line,Belle & Rose,225,325,"daytime,modest,sleeveless,a-line,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,67
+P0088,Olive Cord Dress,Classique,168,240,"casual,modest,long-sleeve,corduroy,fitted","4,6,8,10,12","4,6,7,8,6",false,false,55
+P0089,Plum Tuxedo Dress,Nocturne,285,400,"cocktail,modest,long-sleeve,fitted","2,4,6,8,10,12","2,3,5,4,3,2",false,false,78
+P0090,Jade Silk Gown,Aurelia Couture,349,490,"evening,modest,sleeveless,silk,fitted","2,4,6,8,10,12","1,2,4,5,4,2",false,false,90
+P0091,Terracotta Shirt Dress,Belle & Rose,189,270,"daytime,modest,long-sleeve,shirtdress","4,6,8,10,12,14","3,5,7,6,4,3",false,false,62
+P0092,Mushroom Midi Dress,Classique,210,300,"office,modest,3/4-sleeve,midi,fitted","2,4,6,8,10,12,14","4,6,8,7,5,4,2",false,false,65
+P0093,Electric Blue Satin,Nocturne,183,270,"evening,sleeveless,satin,fitted","2,4,6,8,10,12,14","2,4,6,5,4,3,2",false,false,79
+P0094,Blush Floral Maxi,Belle & Rose,74,150,"daytime,modest,flutter-sleeve,floral,maxi,flowy","4,6,8,10,12","0,3,6,7,5",true,true,36
+P0095,Deep Teal Velvet,Nocturne,378,510,"evening,modest,long-sleeve,velvet,fitted","2,4,6,8,10","1,2,4,3,2",false,false,91
+P0096,Cream Lace Overlay,Aurelia Couture,299,430,"evening,modest,long-sleeve,lace,fitted","2,4,6,8,10,12","1,2,4,5,4,2",false,false,88
+P0097,Berry Satin Midi,Nocturne,182,260,"cocktail,modest,sleeveless,satin,midi","2,4,6,8,10,12","2,4,6,5,4,3",false,false,70
+P0098,Fern Wrap Dress,Belle & Rose,247,350,"daytime,modest,wrap,3/4-sleeve,flowy","4,6,8,10,12,14","3,5,7,6,4,3",false,false,64
+P0099,Eggplant Shift Dress,Classique,209,299,"office,modest,3/4-sleeve,shift,fitted","2,4,6,8,10,12,14","4,6,8,7,5,4,2",false,false,66
+P0100,Pearl White Gown,Luxe Bridal,450,620,"formal,modest,long-sleeve,pearl,fitted","2,4,6,8,10,12","1,2,3,5,4,3",false,false,95
