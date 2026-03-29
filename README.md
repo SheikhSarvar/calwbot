@@ -22,10 +22,11 @@
 ```
 calwbot/
 ├── main.py                 # CLI entry point
-├── requirements.txt
 ├── products.csv            # 100 products
 ├── orders.csv              # 100 orders
 ├── policy.txt              # Return policy rules
+├── pyproject.toml          # uv project + dependencies
+├── uv.lock                 # locked dependency graph
 ├── src/
 │   ├── __init__.py
 │   ├── data_loader.py      # CSV + policy loader (cached)
@@ -44,7 +45,7 @@ calwbot/
 ### 1. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 2. Set your Gemini API key
