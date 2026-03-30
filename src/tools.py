@@ -7,10 +7,11 @@ Tool schemas (for Gemini function-calling) are exported as TOOL_DECLARATIONS.
 from __future__ import annotations
 
 import fnmatch
+import datetime
 from typing import Any
 
 from src.data_loader import load_products, load_orders
-from src.policy_engine import evaluate_return as _eval_return
+from src.policy_engine import TODAY, evaluate_return as _eval_return
 
 
 # ─── Tool implementations ──────────────────────────────────────────────────────
@@ -119,7 +120,17 @@ def get_order(order_id: str) -> dict[str, Any]:
             "found": False,
             "message": f"Order '{order_id}' was not found. Please double-check the order ID.",
         }
-    return {"found": True, "order": o}
+
+    status = _compute_order_status(o["order_date"])
+    return {
+        "found": True,
+        "order": {
+            **o,
+            "simulated_status": status["status"],
+            "estimated_delivery_date": status["estimated_delivery_date"],
+            "status_reason": status["reason"],
+        },
+    }
 
 
 def evaluate_return_tool(order_id: str) -> dict[str, Any]:
@@ -230,7 +241,8 @@ TOOL_DECLARATIONS = [
         "name": "get_order",
         "description": (
             "Retrieve an order's details by order_id (e.g. 'O0043'). "
-            "Returns order date, product purchased, size, and customer ID."
+            "Returns order date, product purchased, size, customer ID, and a simulated "
+            "shipping/delivery status derived from the order date."
         ),
         "parameters": {
             "type": "object",
@@ -265,3 +277,31 @@ TOOL_FUNCTIONS: dict[str, Any] = {
     "get_order":       lambda args: get_order(**args),
     "evaluate_return": lambda args: evaluate_return_tool(**args),
 }
+
+
+def _compute_order_status(order_date_iso: str) -> dict[str, str]:
+    """
+    Deterministic order status simulation (no external carrier integration).
+    """
+    order_date = datetime.date.fromisoformat(order_date_iso)
+    days_since = (TODAY - order_date).days
+
+    # Clamp negative values (future orders) to 0 for a stable message.
+    days_since = max(0, days_since)
+
+    # Simple pipeline: processing → shipped → out_for_delivery → delivered
+    if days_since <= 1:
+        status = "processing"
+        reason = "Your order is being prepared for shipment."
+    elif days_since <= 3:
+        status = "shipped"
+        reason = "Your order has left our warehouse and is in transit."
+    elif days_since <= 5:
+        status = "out_for_delivery"
+        reason = "Your order is with the carrier and is expected soon."
+    else:
+        status = "delivered"
+        reason = "Your order is expected to have been delivered."
+
+    estimated_delivery = (order_date + datetime.timedelta(days=5)).isoformat()
+    return {"status": status, "estimated_delivery_date": estimated_delivery, "reason": reason}

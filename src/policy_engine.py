@@ -8,6 +8,7 @@ from __future__ import annotations
 import datetime
 from typing import Any
 
+from src.data_loader import get_reference_today
 
 # ─── Constants derived from policy.txt ────────────────────────────────────────
 
@@ -30,7 +31,7 @@ VENDOR_RULES: dict[str, dict] = {
     },
 }
 
-TODAY = datetime.date(2026, 3, 27)   # fixed reference date per project spec
+TODAY = get_reference_today()
 
 
 # ─── Main evaluation function ─────────────────────────────────────────────────

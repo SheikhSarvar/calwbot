@@ -207,22 +207,40 @@ class RetailAgent:
         """
         msg = user_message.lower()
 
-        # Detect intent
-        if any(kw in msg for kw in ["order", "return", "refund", "exchange", "status"]):
+        # Detect order-support intent
+        if any(kw in msg for kw in ["order", "tracking", "track", "deliver", "delivery", "status", "shipped"]):
             # Try to extract an order ID
             import re
             m = re.search(r"\b(o\d{4})\b", msg, re.IGNORECASE)
             if m:
                 order_id = m.group(1).upper()
-                result = TOOL_FUNCTIONS["evaluate_return"]({"order_id": order_id})
-                return self._mock_format_return(result)
+                # If the user is asking about returns/exchanges, evaluate policy.
+                if any(kw in msg for kw in ["return", "refund", "exchange"]):
+                    result = TOOL_FUNCTIONS["evaluate_return"]({"order_id": order_id})
+                    return self._mock_format_return(result)
+                # Otherwise treat it as an order status request.
+                result = TOOL_FUNCTIONS["get_order"]({"order_id": order_id})
+                return self._mock_format_order_status(result)
             return (
                 "I'd be happy to help with your order! Could you please provide "
                 "your order ID? It looks like 'O' followed by four digits (e.g. O0043)."
             )
 
+        # Product-specific sizing / availability questions
+        if any(kw in msg for kw in ["size", "sizing", "fit", "available in"]):
+            import re
+            pm = re.search(r"\b(p\d{4})\b", msg, re.IGNORECASE)
+            if pm:
+                product_id = pm.group(1).upper()
+                result = TOOL_FUNCTIONS["get_product"]({"product_id": product_id})
+                requested_size = None
+                sm = re.search(r"\bsize\s+(\d+)\b", msg)
+                if sm:
+                    requested_size = sm.group(1)
+                return self._mock_format_sizing(result, requested_size=requested_size)
+
         # Detect shopping intent
-        if any(kw in msg for kw in ["dress", "gown", "outfit", "wear", "looking for", "need", "find"]):
+        if any(kw in msg for kw in ["dress", "gown", "outfit", "wear", "looking for", "need", "find", "recommend"]):
             # Build basic filters from message
             filters: dict[str, Any] = {}
             import re
@@ -240,9 +258,10 @@ class RetailAgent:
 
             tags = []
             tag_keywords = [
-                "modest", "evening", "gown", "long-sleeve", "casual",
+                # Keep these aligned with tags in products.csv to avoid over-filtering.
+                "modest", "evening", "long-sleeve", "casual",
                 "formal", "lace", "velvet", "silk", "chiffon", "satin",
-                "midi", "maxi", "fitted", "flowy", "wedding",
+                "midi", "maxi", "fitted", "flowy", "ballgown",
             ]
             for kw in tag_keywords:
                 if kw in msg:
@@ -250,7 +269,7 @@ class RetailAgent:
             # Infer occasion tags from context
             if "wedding" in msg or "formal" in msg:
                 tags = list(set(tags) | {"formal", "modest"})
-            if "evening" in msg or "gown" in msg:
+            if "evening" in msg:
                 tags = list(set(tags) | {"evening"})
             if tags:
                 filters["tags"] = tags
@@ -318,4 +337,56 @@ class RetailAgent:
             f"Reason: {result.get('reason', 'No reason provided.')}\n\n"
             "If you'd like to proceed with a return or exchange, please "
             "reply with 'start return' and we'll guide you through the process."
+        )
+
+    def _mock_format_order_status(self, result: dict) -> str:
+        if not result.get("found"):
+            return (
+                f"❌ I couldn't find that order. {result.get('message', '')} "
+                "Please double-check your order ID or contact us for help."
+            )
+
+        o = result["order"]
+        status = o.get("simulated_status", "unknown")
+        eta = o.get("estimated_delivery_date", "unknown")
+        reason = o.get("status_reason", "")
+        return (
+            f"**Order Status for {o['order_id']}**\n"
+            f"Status: {status.replace('_', ' ').title()}\n"
+            f"Order date: {o['order_date']}\n"
+            f"Estimated delivery: {eta}\n\n"
+            f"{reason}\n\n"
+            "If you need to change the delivery address or have a payment issue, "
+            "please ask for a human agent and we'll help right away."
+        )
+
+    def _mock_format_sizing(self, result: dict, requested_size: str | None = None) -> str:
+        if not result.get("found"):
+            return (
+                f"❌ {result.get('message', 'Product not found.')} "
+                "If you share the product ID (e.g. P0016), I can check sizes in stock."
+            )
+
+        p = result["product"]
+        size_stock = p.get("size_stock", {})
+        sizes = p.get("sizes_available", [])
+
+        if requested_size:
+            stock = int(size_stock.get(str(requested_size), 0))
+            if stock > 0:
+                return (
+                    f"✅ Yes — **{p['title']}** is available in size {requested_size}.\n"
+                    f"In-stock units (size {requested_size}): {stock}\n\n"
+                    "If you'd like, tell me your budget and occasion and I can also suggest similar styles."
+                )
+            return (
+                f"❌ **{p['title']}** is currently out of stock in size {requested_size}.\n"
+                f"Available sizes right now: {', '.join(sizes)}\n\n"
+                "Want me to recommend close alternatives that are in stock in your size?"
+            )
+
+        return (
+            f"**Sizing for {p['product_id']} – {p['title']}**\n"
+            f"Available sizes: {', '.join(sizes)}\n"
+            "If you tell me which size you want (e.g. 'size 8'), I can confirm stock instantly."
         )
